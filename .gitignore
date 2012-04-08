@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+/app/cache
+/app/logs
+/src
+/vendor
+!/vendor/_bundle
+/web/bundles
+*
+

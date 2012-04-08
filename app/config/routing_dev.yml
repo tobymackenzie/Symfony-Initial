@@ -1,0 +1,6 @@
+_main:
+    resource: routing.yml
+
+_TJMBaseDev:
+    resource: "@TJMBaseBundle/Resources/config/routing_dev.yml"
+
