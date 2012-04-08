@@ -1,5 +1,5 @@
 _TJMBase:
- resource: "@TJMBaseBundle/Resources/config/routing.yml"
+ resource: "@TJMBaseBundle/Resources/config/routingBase.yml"
  prefix: /
 
 # Internal routing configuration to handle ESI

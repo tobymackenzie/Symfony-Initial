@@ -1,4 +1,6 @@
 imports:
  - { resource: parameters.ini }
  - { resource: security.yml }
+ base_bundle:
+  resource: @TJMBaseBundle/Resources/config/config.yml
 
