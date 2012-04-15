@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+set_time_limit(0);
+
+$rootDir = exec('pwd');
+$vendorDir = $rootDir.'/vendor';
+
+if(!is_dir($vendorDir)){
+	mkdir($vendorDir, 0777, true);
+}
+if(!is_dir($vendorDir.'/_bundles')){
+	mkdir($vendorDir.'/_bundles', 0777, true);
+}
+if(!is_dir($vendorDir.'/_bundles/TJM')){
+	mkdir($vendorDir.'/_bundles/TJM', 0777, true);
+}
+if(!is_dir($vendorDir.'/_bundles/TJM/Shared')){
+	exec("git clone git://github.com/tobymackenzie/Symfony-Shared.git {$vendorDir}/_bundles/TJM/Shared");
+}
+
