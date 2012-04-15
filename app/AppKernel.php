@@ -7,7 +7,6 @@ class AppKernel extends BaseKernel{
 	public function registerBundles(){
 		$bundles = parent::registerBundles();
 		$bundles[] = new TJM\Bundle\BaseBundle\TJMBaseBundle();
-		$bundles[] = new Acme\BlogBundle\AcmeBlogBundle();
 		return $bundles;
 	}
 }
