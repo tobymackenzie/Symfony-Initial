@@ -1,3 +1,6 @@
+;======
+;==symfony base
+;=====
 [symfony]
     git=http://github.com/symfony/symfony.git
     version=v2.0.8
@@ -62,10 +65,25 @@
     version=v1.0.1
 
 
-##### my stuff
-[yuicompressor]
-	git=git://github.com/yui/yuicompressor.git
+;=====
+;==TJM stuff
+;=====
+[tjmBaseBundle]
+	git=git://github.com/tobymackenzie/Symfony-BaseBundle.git
+	target=/_bundles/TJM/Bundle/BaseBundle
+
+[tjmShared]
+	git=git://github.com/tobymackenzie/Symfony-Shared.git
+	target=/_bundles/TJM/Shared
 
 [lesscss]
 	git=git://github.com/cloudhead/less.js.git
+
+[yuicompressor]
+	git=git://github.com/yui/yuicompressor.git
+
+
+;=====
+;==Site stuff
+;==
 
