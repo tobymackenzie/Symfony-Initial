@@ -71,11 +71,11 @@
 ;=====
 [tjmBaseBundle]
 	git=git://github.com/tobymackenzie/Symfony-BaseBundle.git
-	target=/_bundles/TJM/Bundle/BaseBundle
+	target=/bundles/TJM/Bundle/BaseBundle
 
 [tjmShared]
 	git=git://github.com/tobymackenzie/Symfony-Shared.git
-	target=/_bundles/TJM/Shared
+	target=/bundles/TJM/Shared
 
 [lesscss]
 	git=git://github.com/cloudhead/less.js.git

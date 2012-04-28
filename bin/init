@@ -8,13 +8,13 @@ $vendorDir = $rootDir.'/vendor';
 if(!is_dir($vendorDir)){
 	mkdir($vendorDir, 0777, true);
 }
-if(!is_dir($vendorDir.'/_bundles')){
-	mkdir($vendorDir.'/_bundles', 0777, true);
+if(!is_dir($vendorDir.'/bundles')){
+	mkdir($vendorDir.'/bundles', 0777, true);
 }
-if(!is_dir($vendorDir.'/_bundles/TJM')){
-	mkdir($vendorDir.'/_bundles/TJM', 0777, true);
+if(!is_dir($vendorDir.'/bundles/TJM')){
+	mkdir($vendorDir.'/bundles/TJM', 0777, true);
 }
-if(!is_dir($vendorDir.'/_bundles/TJM/Shared')){
-	exec("git clone git://github.com/tobymackenzie/Symfony-Shared.git {$vendorDir}/_bundles/TJM/Shared");
+if(!is_dir($vendorDir.'/bundles/TJM/Shared')){
+	exec("git clone git://github.com/tobymackenzie/Symfony-Shared.git {$vendorDir}/bundles/TJM/Shared");
 }
 
