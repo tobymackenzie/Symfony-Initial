@@ -1,1 +1,4 @@
-../vendor/bundles/TJM/Shared/app/console
+#!/usr/bin/env php
+<?php
+require_once(__DIR__.'/init.php');
+require_once(__DIR__."/../vendor/bundles/TJM/Shared/app/console");
