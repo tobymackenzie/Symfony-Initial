@@ -3,4 +3,3 @@ _main:
 
 _TJMBaseDev:
     resource: "@TJMBaseBundle/Resources/config/routing_dev.yml"
-

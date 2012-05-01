@@ -1,0 +1,13 @@
+tjmSiteHome:
+ pattern: /
+ defaults: {_controller: TJMSiteBundle:Default:index}
+
+tjmTMComTest:
+ pattern: /test{parameters}
+ defaults: {_controller: TJMSiteBundle:Default:test}
+ requirements:
+  parameters: .*
+
+tjmSiteSimplePage:
+ pattern: /{name}
+ defaults: {_controller: TJMSiteBundle:Default:simplePage}

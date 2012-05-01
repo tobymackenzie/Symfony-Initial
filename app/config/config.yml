@@ -4,3 +4,6 @@ imports:
  base_bundle:
   resource: @TJMBaseBundle/Resources/config/config.yml
 
+tjm_base:
+ page_wraps:
+  full: ":base:skeletons/full.html.twig"

@@ -1,0 +1,7 @@
+{% extends 'TJMBaseBundle:base:skeletons/full.html.twig' %}
+{% block pageNavigationContent %}
+{{ parent() }}
+<ul class="listitemnavigation listpageitemnavigation">
+	<li class="pageitemnavigation itemnavigation"><a href="{{ path('tjmSiteHome') }}">Home</a></li>
+</ul>
+{% endblock %}
