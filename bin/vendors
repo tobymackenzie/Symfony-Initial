@@ -1,1 +1,7 @@
-../vendor/bundles/TJM/Shared/bin/vendors
+#!/usr/bin/env php
+<?php
+if(!isset($tjmGlobals)) $tjmGlobals = Array();
+$tjmGlobals['isSimpleCLI'] = true;
+require_once(__DIR__.'/../app/init.php');
+$vendorDir = $tjmGlobals['pathVendor'];
+require_once($tjmGlobals['pathVendor'].'/bundles/TJM/Shared/bin/vendors');
