@@ -17,9 +17,19 @@
 #=====#
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+
+	##==make sure the following paths go through symfony, since they are also a dir and won't be caught below
+	#=root path
     RewriteCond %{REQUEST_URI} ^/$
     RewriteRule ^(.*)$ app_dev.php [QSA,L]
 
+	##==remove trailing slashes for symfony routes
+    RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{HTTPS}s ^on(s)|
+    RewriteRule ^(.*)/$ http%1://%{HTTP_HOST}/$1 [R=301,L]
+
+	##==route non files to symfony loader
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ app_dev.php [QSA,L]
