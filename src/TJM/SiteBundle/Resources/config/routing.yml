@@ -1,6 +1,8 @@
 tjmSiteHome:
- pattern: /
- defaults: {_controller: TJMSiteBundle:Default:index}
+ pattern: "{slash}"
+ defaults: {_controller: TJMSiteBundle:Default:index, slash: ""}
+ requirements:
+  slash: /?
 
 tjmTMComTest:
  pattern: /test{parameters}
