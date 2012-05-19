@@ -4,6 +4,15 @@ imports:
  base_bundle:
   resource: @TJMBaseBundle/Resources/config/config.yml
 
+assetic:
+ filters:
+  less:
+   node: /opt/local/bin/node
+   node_paths: [/opt/local/lib/node_modules]
+  stylus:
+   node: /opt/local/bin/node
+   node_paths: [/opt/local/lib/node_modules]
+
 tjm_base:
  page_wraps:
   full: ":base:skeletons/full.html.twig"
