@@ -3,7 +3,7 @@
 ;=====
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.13
+    version=v2.0.14
 
 [twig]
     git=http://github.com/fabpot/Twig.git
@@ -73,15 +73,23 @@
 	git=git://github.com/tobymackenzie/Symfony-BaseBundle.git
 	target=/bundles/TJM/Bundle/BaseBundle
 
+[tjmPresentation]
+    git=git://github.com/tobymackenzie/Web-Presentation.git
+    target=/bundles/TJM/Other/web-presentation
+
 [tjmShared]
 	git=git://github.com/tobymackenzie/Symfony-Shared.git
 	target=/bundles/TJM/Shared
 
-[lesscss]
-	git=git://github.com/cloudhead/less.js.git
+;==
+;==third party
+;==
 
+;--assetic filters
 [yuicompressor]
 	git=git://github.com/yui/yuicompressor.git
+
+;--assets
 
 
 ;=====
