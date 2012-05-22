@@ -1,4 +1,9 @@
 {% extends 'TJMBaseBundle:base:skeletons/full.html.twig' %}
+{% block pageStyles %}
+{%	stylesheets filter='stylus,?yui_css' '@TJMSiteBundle/Resources/public/presentation/base.styl' %}
+<link href="{{ asset_url }}" rel="stylesheet" />
+{%	endstylesheets %}
+{% endblock %}
 {% block pageNavigationContent %}
 {{ parent() }}
 <ul class="listitemnavigation listpageitemnavigation">
