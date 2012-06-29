@@ -1,5 +1,10 @@
 imports:
  - { resource: config.yml }
  base_bundle:
-  resource: @TJMBaseBundle/Resources/config/config_dev.yml 
+  resource: @TJMBaseBundle/Resources/config/config_dev.yml
 
+services:
+ debug.twig.extension:
+  class: Twig_Extension_debug
+  tags:
+   - { name: 'twig.extension' }
