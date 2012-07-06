@@ -21,7 +21,7 @@
 	##==make sure the following paths go through symfony, since they are also a dir and won't be caught below
 	#=root path
     RewriteCond %{REQUEST_URI} ^/$
-    RewriteRule ^(.*)$ app_dev.php [QSA,L]
+    RewriteRule ^(.*)$ app.php [QSA,L]
 
 	##==remove trailing slashes for symfony routes
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -32,6 +32,6 @@
 	##==route non files to symfony loader
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)$ app_dev.php [QSA,L]
+	RewriteRule ^(.*)$ app.php [QSA,L]
 </IfModule>
 
