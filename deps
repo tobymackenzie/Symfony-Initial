@@ -72,6 +72,7 @@
 [tjmBaseBundle]
 	git=git://github.com/tobymackenzie/Symfony-BaseBundle.git
 	target=/bundles/TJM/Bundle/BaseBundle
+    version=origin/0.0.x
 
 [tjmPresentation]
     git=git://github.com/tobymackenzie/Web-Presentation.git
@@ -80,6 +81,7 @@
 [tjmShared]
 	git=git://github.com/tobymackenzie/Symfony-Shared.git
 	target=/bundles/TJM/Shared
+    version=origin/0.0.x
 
 ;==
 ;==third party
