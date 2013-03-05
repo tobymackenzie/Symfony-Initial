@@ -4,7 +4,6 @@
 /app/logs
 /src
 /vendor
-!/vendor/_bundle
 /web/bundles
 *
 

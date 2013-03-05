@@ -1,9 +1,9 @@
 imports:
- - { resource: parameters.ini }
- - { resource: security.yml }
- base_bundle:
-  resource: @TJMBaseBundle/Resources/config/config.yml
+ - {resource: parameters.yml}
+ - {resource: security.yml}
+ - {resource: @TJMBaseBundle/Resources/config/config.yml}
 
+#==Assetic
 assetic:
  filters:
   less:
@@ -12,7 +12,3 @@ assetic:
   stylus:
    node: /opt/local/bin/node
    node_paths: [/opt/local/lib/node_modules]
-
-tjm_base:
- page_wraps:
-  full: ":base:skeletons/full.html.twig"

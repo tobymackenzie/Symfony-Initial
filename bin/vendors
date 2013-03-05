@@ -1,7 +1,15 @@
 #!/usr/bin/env php
 <?php
-if(!isset($tjmGlobals)) $tjmGlobals = Array();
-$tjmGlobals['loadSymfony'] = false;
-require_once(__DIR__.'/../app/init.php');
-$vendorDir = $tjmGlobals['pathVendor'];
-require_once($tjmGlobals['pathVendor'].'/bundles/TJM/Shared/bin/vendors');
+//--install composer if not installed
+if(!file_exists('composer.phar')){
+	exec('curl -sS https://getcomposer.org/installer | php');
+}
+
+//--gather arguments
+$arguments = '';
+for($i = 1; $i < $argc; ++$i){
+	$arguments .= " {$argv[$i]}";
+}
+
+//--run composer with arguments
+passthru('php composer.phar' . $arguments);

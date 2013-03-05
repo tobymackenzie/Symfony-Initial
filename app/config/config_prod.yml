@@ -1,5 +1,10 @@
 imports:
- - { resource: config.yml }
- base_bundle:
-  resource: @TJMBaseBundle/Resources/config/config_prod.yml
+ - {resource: config.yml}
+ - {resource: @TJMBaseBundle/Resources/config/config_prod.yml}
 
+#==Doctrine
+#doctrine:
+# orm:
+#  metadata_cache_driver: apc
+#  result_cache_driver: apc
+#  query_cache_driver: apc
