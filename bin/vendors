@@ -1,7 +1,13 @@
 #!/usr/bin/env php
 <?php
 //--install composer if not installed
-if(!file_exists('composer.phar')){
+$whichComposerResult = shell_exec("which composer");
+$haveGlobalComposer = (empty($whichComposerResult)) ? false : true;
+if(!$haveGlobalComposer){
+	$haveLocalComposer = file_exists('composer.phar');
+}
+$haveComposer = $haveGlobalComposer || $haveLocalComposer;
+if(!$haveComposer){
 	exec('curl -sS https://getcomposer.org/installer | php');
 }
 
@@ -12,4 +18,5 @@ for($i = 1; $i < $argc; ++$i){
 }
 
 //--run composer with arguments
-passthru('php composer.phar' . $arguments);
+$composerCommand = ($haveGlobalComposer) ? 'composer' : 'php composer.phar';
+passthru($composerCommand . $arguments);
