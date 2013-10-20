@@ -2,6 +2,7 @@
 *.swp
 /app/cache
 /app/logs
+/composer.phar
 /src
 /vendor
 /web/bundles
