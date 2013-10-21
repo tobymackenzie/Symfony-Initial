@@ -4,8 +4,5 @@
 /app/config/parameters.yml
 /app/logs
 /composer.phar
-/src
 /vendor
 /web/bundles
-*
-
