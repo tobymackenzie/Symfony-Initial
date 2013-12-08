@@ -1,7 +1,15 @@
 ## set permissions log and cache directories
 #-# must run as root
-rm -rf app/cache/*
-rm -rf app/logs/*
+if [ -d app/cache ]; then
+	rm -rf app/cache/*
+else
+	mkdir app/cache
+fi
+if [ -d app/logs ]; then
+	rm -rf app/logs/*
+else
+	mkdir app/logs
+fi
 
 APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1`
 
