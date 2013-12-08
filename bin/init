@@ -1,0 +1,5 @@
+sudo bin/permissions
+bin/vendors install
+app/console cache:clear && app/console cache:clear --env prod
+app/console doctrine:phpcr:init:dbal
+	#app/console doctrine:schema:create
