@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+/*
+Install composer.phar.  If user is root, will move into a global location.
+Arguments:
+	path: Path to move script to
+*/
+
+$isRoot = (posix_getuid() === 0);
+passthru('curl -sS https://getcomposer.org/installer | php');
+if($argc > 1){
+	$mvLocation = $argv[1];
+}else{
+	$mvLocation = ($isRoot) ? '/usr/local/bin/composer' : null;
+}
+if($mvLocation && $mvLocation !== '.'){
+	passthru('mv composer.phar ' . $mvLocation);
+}

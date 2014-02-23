@@ -8,7 +8,7 @@ if(!$haveGlobalComposer){
 }
 $haveComposer = $haveGlobalComposer || $haveLocalComposer;
 if(!$haveComposer){
-	exec('curl -sS https://getcomposer.org/installer | php');
+	exec(__DIR__ . '/installComposer');
 }
 
 //--gather arguments
