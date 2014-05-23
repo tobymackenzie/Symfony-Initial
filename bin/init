@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 bin/permissions
 bin/vendors install
 app/console cache:clear && app/console cache:clear --env prod

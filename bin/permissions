@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ## set permissions log and cache directories
 #-# must run as root
 if [ -d app/cache ]; then
