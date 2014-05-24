@@ -1,5 +1,29 @@
-#!/usr/bin/env bash
+#!/usr/bin/env php
+<?php
+/*
+Command: init
+Do initial setup for this application:
+- set permissions for cache and log directories
+- install vendor libraries
+- clear the cache
 
-bin/permissions
-bin/vendors install
-app/console cache:clear && app/console cache:clear --env prod
+Must pass argument that is passed on to bin/permissions for this to work properly.
+*/
+
+$binPath = __DIR__;
+$appPath = __DIR__ . '/../app';
+
+$commands = Array(
+	"{$binPath}/permissions " . implode(' ', array_slice($argv, 1)) //-# pass arguments to permissions
+	,"{$binPath}/vendors install"
+	,"{$appPath}/console cache:clear && {$appPath}/console cache:clear --env prod"
+);
+$return = 0;
+foreach($commands as $command){
+	echo "Running: {$command}\n";
+	passthru($command, $return);
+	if($return !== 0){
+		echo "Failed with return status: {$return}";
+		exit($return);
+	}
+}

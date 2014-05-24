@@ -1,27 +1,73 @@
-#!/usr/bin/env bash
+#!/usr/bin/env php
+<?php
+/*
+Command: permissions
+Set permissions on log and cache directories.  Remove exising files first.  Permissions part requires sudo abilities.
+*/
 
-## set permissions log and cache directories
-#-# must run as root
-if [ -d app/cache ]; then
-	rm -rf app/cache/*
-else
-	mkdir app/cache
-fi
-if [ -d app/logs ]; then
-	rm -rf app/logs/*
-else
-	mkdir app/logs
-fi
+if($argc === 2){
+	$appPath = __DIR__ . "/../app";
+	$cachePath = $appPath . "/cache";
+	$logPath = $appPath . "/logs";
+	if(is_dir($cachePath)){
+		echo "Clearing cache folder\n";
+		passthru("rm -rf {$cachePath}/*");
+	}else{
+		echo "Creating cache folder\n";
+		passthru("mkdir {$cachePath}");
+	}
+	if(is_dir($logPath)){
+		echo "Clearing log folder\n";
+		passthru("rm -rf {$logPath}/*");
+	}else{
+		echo "Creating log folder\n";
+		passthru("mkdir {$logPath}");
+	}
 
-APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1`
+	$apacheUser = exec("ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1");
 
-##--option 1: ACL with chmod +a
-sudo chmod +a "$APACHEUSER allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
-sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs
+	switch($argv[1]){
+		case 'chmod':
+			$command = 'sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs';
+			if($apacheUser){
+				$command .= ' && sudo chmod +a "' . $apacheUser . ' allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs';
+			}
+			echo "Running: {$command}";
+			passthru($command, $return);
+		break;
+		case 'setfacl':
+			$apacheCommandPart = ($apacheUser)
+				? " -m u:{$apacheUser}:rwX"
+				: ''
+			;
+			$command = "sudo setfacl -R {$apacheCommandPart} -m u:`whoami`:rwX app/cache app/logs && sudo setfacl -dR {$apacheCommandPart} -m u:`whoami`:rwX app/cache app/logs";
+			echo "Running: {$command}";
+			passthru($command, $return);
+		break;
+		case 'none':
+?>
+There is no way to set the permissions directly.  Please add 'umask(0000);' to app.php and app_dev.php to bypass the need for setting permissions, though it has some security implications.
+<?php
+			$return = 1;
+		break;
+		default:
+?>
+Unrecognized option.  Please try another option.  Try 'none' if your system doesn't support ACLs.
+<?php
+			$return = 1;
+		break;
+	}
+}else{
+?>
+Choose what type of ACLs your system supports.  Options:
+	chmod: supports `chmod +a` syntax
+	setfacl: supports `setfacl` command
+	none: doesn't have ACL support
+<?php
+	$return = 1;
+}
 
-##--option 2: ACL, older systems
-# sudo setfacl -R -m u:$APACHEUSER:rwX -m u:`whoami`:rwX app/cache app/logs
-# sudo setfacl -dR -m u:$APACHEUSER:rwX -m u:`whoami`:rwX app/cache app/logs
-
-##--option 3: non ACL
-#-# add 'umask(0000);' to app.php and app_dev.php
+//--return.  if a command failed above, set exit status.
+if($return !== 0){
+	exit($return);
+}
