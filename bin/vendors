@@ -8,7 +8,11 @@ if(!$haveGlobalComposer){
 }
 $haveComposer = $haveGlobalComposer || $haveLocalComposer;
 if(!$haveComposer){
-	exec(__DIR__ . '/installComposer');
+	passthru(__DIR__ . '/installComposer');
+	$isRoot = (posix_getuid() === 0);
+	if($isRoot){
+		$haveGlobalComposer = true;
+	}
 }
 
 //--gather arguments
