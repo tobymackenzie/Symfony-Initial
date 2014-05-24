@@ -7,6 +7,12 @@ Arguments:
 */
 
 $isRoot = (posix_getuid() === 0);
+echo "installing composer";
+if($isRoot){
+	echo " globally\n";
+}else{
+	echo " locally\n";
+}
 passthru('curl -sS https://getcomposer.org/installer | php');
 if($argc > 1){
 	$mvLocation = $argv[1];
