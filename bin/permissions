@@ -3,6 +3,9 @@
 /*
 Command: permissions
 Set permissions on log and cache directories.  Remove exising files first.  Permissions part requires sudo abilities.
+
+Arguments:
+	aclType: What type of ACL mechanism to use.  One of (chmod|setfacl|none)
 */
 
 if($argc === 2){

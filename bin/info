@@ -1,4 +1,7 @@
 #!/usr/bin/env php
 <?php
+/*
+Command: info
+Simple command to get phpinfo.  Can add whatever other system info you want.
+*/
 echo phpinfo();
-

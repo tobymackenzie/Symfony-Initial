@@ -1,9 +1,11 @@
 #!/usr/bin/env php
 <?php
 /*
+Command: installComposer
 Install composer.phar.  If user is root, will move into a global location.
+
 Arguments:
-	path: Path to move script to
+	path: (Optional) Path to move script to
 */
 
 $isRoot = (posix_getuid() === 0);

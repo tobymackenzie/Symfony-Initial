@@ -8,6 +8,9 @@ Do initial setup for this application:
 - clear the cache
 
 Must pass argument that is passed on to bin/permissions for this to work properly.
+
+Arguments:
+	{see permissions}
 */
 
 $binPath = __DIR__;

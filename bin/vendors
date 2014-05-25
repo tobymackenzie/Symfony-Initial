@@ -1,5 +1,12 @@
 #!/usr/bin/env php
 <?php
+/*
+Command: vendors
+Pass through for running `composer` that automatically installs it if it isn't installed.  'bin/vendors' was in early versions of Symfony before 'composer' was in use.
+
+Arguments:
+	{see composer}
+*/
 //--install composer if not installed
 $whichComposerResult = shell_exec("which composer");
 $haveGlobalComposer = (empty($whichComposerResult)) ? false : true;
