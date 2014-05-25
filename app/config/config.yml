@@ -5,11 +5,4 @@ imports:
 
 #==Assetic
 assetic:
- filters:
-  less:
-   node: /opt/local/bin/node
-   node_paths: [/opt/local/lib/node_modules]
-  stylus:
-   node: /opt/local/bin/node
-   node_paths: [/opt/local/lib/node_modules]
  write_to: %kernel.root_dir%/../web/_assets/
