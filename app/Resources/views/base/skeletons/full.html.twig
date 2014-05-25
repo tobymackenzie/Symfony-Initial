@@ -1,8 +1,13 @@
 {% extends 'TJMBaseBundle:base:skeletons/full.html.twig' %}
 {% block pageStyles %}
-{%	stylesheets filter='stylus' '@TJMSiteBundle/Resources/public/presentation/base.styl' %}
+{%	stylesheets '@TJMSiteBundle/Resources/public/presentation/*.css' %}
 <link href="{{ asset_url }}" rel="stylesheet" />
 {%	endstylesheets %}
+{% endblock %}
+{% block pageScriptsPostLoad %}
+{%	javascripts '@TJMSiteBundle/Resources/public/behavior/*.js' %}
+<script src="{{ asset_url }}"></script>
+{%	endjavascripts %}
 {% endblock %}
 {% block pageNavigationContent %}
 {{ parent() }}
