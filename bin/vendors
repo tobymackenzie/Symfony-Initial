@@ -23,10 +23,7 @@ if(!$haveComposer){
 }
 
 //--gather arguments
-$arguments = '';
-for($i = 1; $i < $argc; ++$i){
-	$arguments .= " {$argv[$i]}";
-}
+$arguments = ($argc > 1) ? ' ' . implode(' ', array_slice($argv, 1)) : '';
 
 //--run composer with arguments
 $composerCommand = ($haveGlobalComposer) ? 'composer' : 'php composer.phar';
