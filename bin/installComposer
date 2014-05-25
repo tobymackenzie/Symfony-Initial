@@ -12,6 +12,8 @@ $isRoot = (posix_getuid() === 0);
 echo "installing composer";
 if($isRoot){
 	echo " globally\n";
+}elseif($argc > 1){
+	echo " to '{$argv[1]}'";
 }else{
 	echo " locally\n";
 }
