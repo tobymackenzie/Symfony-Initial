@@ -20,7 +20,7 @@
 		,"sensio/framework-extra-bundle": "2.3.*"
 		,"sensio/generator-bundle": "2.3.*"
 		,"incenteev/composer-parameter-handler": "~2.0"
-		,"tjm/symfony-basebundle": "0.2.x@dev"
+		,"tjm/symfony-basebundle": "0.3.x@dev"
 		,"tjm/symfony-standard-edition-bundle": "2.3.x@dev"
 	}
 	,"repositories": [
