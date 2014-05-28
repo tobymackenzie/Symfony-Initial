@@ -1,5 +1,5 @@
 _main:
     resource: routing.yml
 
-_TJMBaseDev:
-    resource: "@TJMBaseBundle/Resources/config/routing_dev.yml"
+_TJMStandardEditionDev:
+    resource: "@TJMStandardEditionBundle/Resources/config/routing_dev.yml"

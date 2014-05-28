@@ -1,5 +1,5 @@
 <?php
-namespace TJM\Shared\Component;
+namespace TJM\Bundle\StandardEditionBundle\Component;
 
 class InitConfig{
 	/*

@@ -1,5 +1,5 @@
 <?php
-use TJM\Shared\Component\AppKernel as BaseKernel;
+use TJM\Bundle\StandardEditionBundle\Component\AppKernel as BaseKernel;
 
 class AppKernel extends BaseKernel{
 	public function registerBundles(){

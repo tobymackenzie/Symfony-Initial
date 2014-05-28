@@ -2,19 +2,9 @@
 	"name": "tjm/symfony-initial"
 	,"autoload": {
 		"psr-0": {"": "src/"}
-	},
-	"config": {
-		"bin-dir": "bin"
 	}
-	,"extra": {
-		"symfony-app-dir": "app"
-		,"symfony-web-dir": "web"
-		,"incenteev-parameters": {
-			"file": "app/config/parameters.yml"
-		}
-		,"branch-alias": {
-			"dev-master": "2.3-dev"
-		}
+	,"config": {
+		"bin-dir": "bin"
 	}
 	,"minimum-stability": "stable"
 	,"require": {
@@ -31,32 +21,20 @@
 		,"sensio/generator-bundle": "2.3.*"
 		,"incenteev/composer-parameter-handler": "~2.0"
 		,"tjm/symfony-basebundle": "0.2.x@dev"
-		,"tjm/symfony-shared": "0.3.x@dev"
+		,"tjm/symfony-standard-edition-bundle": "2.3.x@dev"
 	}
 	,"repositories": [
 		{
 			"type": "git"
 			,"url": "git://github.com/tobymackenzie/Symfony-BaseBundle.git"
 		}
-		,{
-			"type": "git"
-			,"url": "git://github.com/tobymackenzie/Symfony-Shared.git"
-		}
 	]
 	,"scripts": {
 		"post-install-cmd": [
-			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+			"TJM\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::runSymfonyStandardPostInstallCommands"
 		]
 		,"post-update-cmd": [
-			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+			"TJM\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::runSymfonyStandardPostUpdateCommands"
 		]
 	}
 }

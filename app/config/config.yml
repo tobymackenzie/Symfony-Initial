@@ -2,6 +2,7 @@ imports:
  - {resource: parameters.yml}
  - {resource: security.yml}
  - {resource: @TJMBaseBundle/Resources/config/config.yml}
+ - {resource: @TJMStandardEditionBundle/Resources/config/config.yml}
 
 #==Assetic
 assetic:

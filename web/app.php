@@ -1,7 +1,7 @@
 <?php
 // use Symfony\Component\ClassLoader\ApcClassLoader;
-use Symfony\Component\Debug\Debug;
-use TJM\Shared\Component\Config;
+use TJM\Bundle\StandardEditionBundle\Component\App\WebApp;
+use TJM\Bundle\StandardEditionBundle\Component\Config;
 
 require_once __DIR__.'/../app/init.php';
 
@@ -15,7 +15,6 @@ if(Config::getEnvironment() === 'dev'){
 		header('HTTP/1.0 403 Forbidden');
 		exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 	}
-	Debug::enable();
 }elseif(Config::getEnvironment() === 'prod'){
 	// Use APC for autoloading to improve performance.
 	// Change 'sf2' to a unique prefix in order to prevent cache key conflicts
@@ -28,5 +27,4 @@ if(Config::getEnvironment() === 'dev'){
 	//require_once __DIR__.'/../app/AppCache.php';
 }
 
-$kernel = new AppKernel(Config::getEnvironment(), (Config::getDebug()));
-$kernel->processRequest();
+WebApp::run();
