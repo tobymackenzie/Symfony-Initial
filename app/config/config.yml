@@ -4,6 +4,9 @@ imports:
  - {resource: @TJMBaseBundle/Resources/config/config.yml}
  - {resource: @TJMStandardEditionBundle/Resources/config/config.yml}
 
+parameters:
+ twig.extension.assets.class: TJM\Bundle\BaseBundle\Extension\AssetsExtension
+
 #==Assetic
 assetic:
  bundles:
