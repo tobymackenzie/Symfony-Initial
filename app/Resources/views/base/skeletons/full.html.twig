@@ -1,17 +1,21 @@
 {% extends 'TJMBaseBundle:base:skeletons/full.html.twig' %}
-{% block pageStyles %}
+
+{% block docStyles %}
 {%	stylesheets '@TJMSiteBundle/Resources/public/presentation/*.css' %}
 <link href="{{ asset_url }}" rel="stylesheet" />
 {%	endstylesheets %}
 {% endblock %}
-{% block pageScriptsPostLoad %}
+
+
+{% block docPostScripts %}
 {%	javascripts '@TJMSiteBundle/Resources/public/behavior/*.js' %}
 <script src="{{ asset_url }}"></script>
 {%	endjavascripts %}
 {% endblock %}
-{% block pageNavigationContent %}
+
+{% block docNav %}
 {{ parent() }}
-<ul class="listNavigation listPageNavigation">
-	<li class="itemPageNavigation itemNavigation"><a href="{{ path('tjmSiteHome') }}">Home</a></li>
+<ul class="navList docNavList l-1">
+	<li class="docNavItem navItem l-1"><a class="navAction l-1" href="{{ path('tjmSiteHome') }}">Home</a></li>
 </ul>
 {% endblock %}
