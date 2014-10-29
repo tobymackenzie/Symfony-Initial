@@ -3,7 +3,7 @@
 use TJM\Bundle\StandardEditionBundle\Component\App\WebApp;
 use TJM\Bundle\StandardEditionBundle\Component\Config;
 
-require_once __DIR__.'/../app/init.php';
+require_once __DIR__ . '/../app/init.php';
 
 if(Config::getEnvironment() === 'dev'){
 	// This check prevents access to debug front controllers that are deployed by accident to production servers.
@@ -13,7 +13,7 @@ if(Config::getEnvironment() === 'dev'){
 		|| !in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', 'fe80::1', '::1'))
 	) {
 		header('HTTP/1.0 403 Forbidden');
-		exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+		exit('You are not allowed to access this file. Check ' . basename(__FILE__) . ' for more information.');
 	}
 }elseif(Config::getEnvironment() === 'prod'){
 	// Use APC for autoloading to improve performance.

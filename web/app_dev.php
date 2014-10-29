@@ -5,6 +5,6 @@ use TJM\Bundle\StandardEditionBundle\Component\Config;
 // read http://symfony.com/doc/current/book/installation.html#configuration-and-setup for more information
 //umask(0000);
 
-require_once __DIR__.'/../app/init.php';
+require_once __DIR__ . '/../app/init.php';
 Config::setEnvironment('dev');
 require __DIR__ . '/app.php';
