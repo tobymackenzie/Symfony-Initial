@@ -6,6 +6,14 @@
 {%	endstylesheets %}
 {% endblock %}
 
+{% block docPreScripts %}
+<script><!--
+	/*{# stick class name onto html denoting js support. -@<http://www.paulirish.com/2009/avoiding-the-fouc-v3/> #}*/
+	(function(H){H.className=H.className.replace(/\bua-no-js\b/,'ua-js')})(document.documentElement);
+	/*{# tell js what environment we're in #}*/
+	window.ENV = '{{app.environment}}';
+--></script>
+{% endblock %}
 
 {% block docPostScripts %}
 {%	javascripts '@TJMSiteBundle/Resources/public/behavior/*.js' %}
