@@ -2,9 +2,11 @@
 *.swo
 *.swp
 .DS_Store
+/app/bootstrap.php.cache
 /app/cache
 /app/config/parameters.yml
 /app/logs
+/composer.lock
 /composer.phar
 /vendor
 /web/_assets
