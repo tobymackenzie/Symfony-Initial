@@ -20,7 +20,8 @@
 # mod_rewrite). Additionally, this reduces the matching process for the
 # start page (path "/") because otherwise Apache will apply the rewriting rules
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
-DirectoryIndex app.php
+# Allow easy overriding by placing an index file in place.
+DirectoryIndex index.html index.htm index.php app.php
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
@@ -50,7 +51,6 @@ DirectoryIndex app.php
 	RewriteRule ^app\.php(/(.*)|$) %{ENV:BASE}/$2 [R=301,L]
 
 	# If the requested filename exists, simply serve it.
-	# We only want to let Apache serve files and not directories.
 	RewriteCond %{REQUEST_FILENAME} -f
 	RewriteRule .? - [L]
 
