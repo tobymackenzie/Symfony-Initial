@@ -1,6 +1,6 @@
 <?php
-use TJM\Bundle\StandardEditionBundle\Component\Config;
+use TJM\Bundle\StandardEditionBundle\Component\App\App;
 
-require_once __DIR__ . '/../app/init.php';
-Config::setEnvironment('dev');
+$loader = require_once __DIR__ . '/../app/bootstrap.php.cache';
+App::setEnvironment('dev');
 require __DIR__ . '/app.php';

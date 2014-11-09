@@ -1,15 +1,18 @@
 <?php
+namespace TJM\Bundle\StandardEditionBundle\Component\App;
+
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Composer\Autoload\ClassLoader;
-use TJM\Bundle\StandardEditionBundle\Component\InitConfig;
 
-require_once(__DIR__ . '/config/InitConfig.php');
+define(__NAMESPACE__ . '\VENDOR_DIR', realpath(__DIR__ . '/../vendor'));
 
 /**
 * @var ClassLoader $loader
 */
-$loader = require InitConfig::getPath('vendor') . '/autoload.php';
-
+$loader = require(constant(__NAMESPACE__ . '\VENDOR_DIR') . '/autoload.php');
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+require_once __DIR__ . '/App.php';
+App::setLoader($loader);
 
 return $loader;
