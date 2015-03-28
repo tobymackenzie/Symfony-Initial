@@ -2,6 +2,6 @@ _TJMBase:
  resource: "@TJMBaseBundle/Resources/config/routingBase.yml"
  prefix: /
 
-_TJMSite:
- resource: "@TJMSiteBundle/Resources/config/routing.yml"
+_App:
+ resource: "@AppBundle/Resources/config/routing.yml"
  prefix: /

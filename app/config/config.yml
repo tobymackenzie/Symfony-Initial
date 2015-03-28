@@ -10,5 +10,5 @@ parameters:
 #==Assetic
 assetic:
  bundles:
-  - TJMSiteBundle
+  - AppBundle
  write_to: %kernel.root_dir%/../web/_assets

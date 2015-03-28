@@ -1,12 +1,12 @@
 <?php
-namespace TJM\SiteBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use TJM\Bundle\BaseBundle\Entity\Entity as BaseEntity;
 
 /**
-TJM\SiteBundle\Entity\Entity
+AppBundle\Entity\Entity
 to be used to grab pieces for actual entities, should have examples of most types of attributes and their getters/setters
 @ORM\Table(name="entities")
 @ORM\Entity(repositoryClass="TJM\Bundle\BaseBundle\Repository\Repository")
@@ -24,14 +24,14 @@ class SampleEntity extends BaseEntity{
 	protected $id;
 
 	/**
-	@var TJM\SiteBundle\Entity\SampleEntity
-	@ORM\ManyToMany(targetEntity="TJM\SiteBundle\Entity\SampleEntity", mappedBy="fooManyToManyOwningSide")
+	@var AppBundle\Entity\SampleEntity
+	@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToManyOwningSide")
 	*/
 	protected $fooManyToManyInverseSide;
 
 	/**
-	@var TJM\SiteBundle\Entity\SampleEntity
-	@ORM\ManyToMany(targetEntity="TJM\SiteBundle\Entity\SampleEntity", inversedBy="fooManyToManyInverseSide")
+	@var AppBundle\Entity\SampleEntity
+	@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", inversedBy="fooManyToManyInverseSide")
 	@ORM\JoinTable(
 		name="entities_entities",
 		joinColumns={
@@ -45,8 +45,8 @@ class SampleEntity extends BaseEntity{
 	protected $fooManyToManyOwningSide;
 
 	/**
-	@var TJM\SiteBundle\Entity\SampleEntity
-	@ORM\ManyToOne(targetEntity="TJM\SiteBundle\Entity\SampleEntity")
+	@var AppBundle\Entity\SampleEntity
+	@ORM\ManyToOne(targetEntity="AppBundle\Entity\SampleEntity")
 	@ORM\JoinColumns({
 		@ORM\JoinColumn(name="foo_many_to_one_id", referencedColumnName="id")
 	})
@@ -54,8 +54,8 @@ class SampleEntity extends BaseEntity{
 	protected $fooManyToOne;
 
 	/**
-	@var TJM\SiteBundle\Entity\SampleEntity
-	@ORM\OneToMany(targetEntity="TJM\SiteBundle\Entity\SampleEntity", mappedBy="fooManyToOne")
+	@var AppBundle\Entity\SampleEntity
+	@ORM\OneToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToOne")
 	*/
 	protected $fooOneToMany;
 
@@ -106,9 +106,9 @@ class SampleEntity extends BaseEntity{
 
 	/**
 	Add fooManyToManyInverseSide
-	@param TJM\SiteBundle\Entity\SampleEntity $value
+	@param AppBundle\Entity\SampleEntity $value
 	*/
-	public function addSampleEntity(\TJM\SiteBundle\Entity\SampleEntity $value){
+	public function addSampleEntity(\AppBundle\Entity\SampleEntity $value){
 		$this->fooManyToManyInverseSide[] = $value;
 		return $this;
 	}
@@ -131,16 +131,16 @@ class SampleEntity extends BaseEntity{
 
 	/**
 	Get fooManyToOne
-	@return TJM\SiteBundle\Entity\SampleEntity
+	@return AppBundle\Entity\SampleEntity
 	*/
 	public function getFooManyToOne(){
 		return $this->fooManyToOne;
 	}
 	/**
 	Set fooManyToOne
-	@param TJM\SiteBundle\Entity\SampleEntity $fooManyToOne
+	@param AppBundle\Entity\SampleEntity $fooManyToOne
 	*/
-	public function setFooManyToOne(\TJM\SiteBundle\Entity\SampleEntity $fooManyToOne){
+	public function setFooManyToOne(\AppBundle\Entity\SampleEntity $fooManyToOne){
 		$this->fooManyToOne = $fooManyToOne;
 		return $this;
 	}

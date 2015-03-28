@@ -1,7 +1,7 @@
 {% extends 'TJMBaseBundle:base:skeletons/full.html.twig' %}
 
 {% block docStyles %}
-{%	stylesheets '@TJMSiteBundle/Resources/public/presentation/*.css' %}
+{%	stylesheets '@AppBundle/Resources/public/presentation/*.css' %}
 <link href="{{ asset_url }}" rel="stylesheet" />
 {%	endstylesheets %}
 {% endblock %}
@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block docPostScripts %}
-{%	javascripts '@TJMSiteBundle/Resources/public/behavior/*.js' %}
+{%	javascripts '@AppBundle/Resources/public/behavior/*.js' %}
 <script src="{{ asset_url }}"></script>
 {%	endjavascripts %}
 {% endblock %}
@@ -24,6 +24,6 @@
 {% block docNav %}
 {{ parent() }}
 <ul class="navList docNavList l-1">
-	<li class="docNavItem navItem l-1"><a class="navAction l-1" href="{{ path('tjmSiteHome') }}" rel="home">Home</a></li>
+	<li class="docNavItem navItem l-1"><a class="navAction l-1" href="{{ path('appHome') }}" rel="home">Home</a></li>
 </ul>
 {% endblock %}

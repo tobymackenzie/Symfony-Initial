@@ -27,7 +27,7 @@ class App extends AppBase{
 	protected function initBundles(){
 		return array_merge(parent::initBundles(), Array(
 			new \TJM\Bundle\BaseBundle\TJMBaseBundle()
-			,new \TJM\SiteBundle\TJMSiteBundle()
+			,new \AppBundle\AppBundle()
 		));
 	}
 }

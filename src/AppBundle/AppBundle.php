@@ -1,9 +1,9 @@
 <?php
-namespace TJM\SiteBundle;
+namespace AppBundle;
 
 use TJM\Bundle\BaseBundle\TJMBaseBundle as BaseBundle;
 
-class TJMSiteBundle extends BaseBundle{
+class AppBundle extends BaseBundle{
 /*
 	public function getParent(){
 		return 'TJMBaseBundle';
