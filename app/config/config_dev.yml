@@ -8,6 +8,6 @@ imports:
 #==Services
 services:
  debug.twig.extension:
-  class: Twig_Extension_debug
+  class: Twig_Extension_Debug
   tags:
    - { name: 'twig.extension' }
