@@ -1,7 +1,8 @@
+_app_pre:
+ resource: "@AppBundle/Resources/config/routing.pre.yml"
+
 _TJMBase:
  resource: "@TJMBaseBundle/Resources/config/routingBase.yml"
- prefix: /
 
-_App:
- resource: "@AppBundle/Resources/config/routing.yml"
- prefix: /
+_app_post:
+ resource: "@AppBundle/Resources/config/routing.post.yml"
