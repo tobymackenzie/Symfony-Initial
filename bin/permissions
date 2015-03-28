@@ -9,9 +9,9 @@ Arguments:
 */
 
 if($argc === 2){
-	$appPath = __DIR__ . "/../app";
-	$cachePath = $appPath . "/cache";
-	$logPath = $appPath . "/logs";
+	$varPath = __DIR__ . '/../var';
+	$cachePath = $varPath . "/cache";
+	$logPath = $varPath . "/logs";
 	if(is_dir($cachePath)){
 		echo "Clearing cache folder\n";
 		passthru("rm -rf {$cachePath}/*");
@@ -31,9 +31,9 @@ if($argc === 2){
 
 	switch($argv[1]){
 		case 'chmod':
-			$command = 'sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs';
+			$command = "sudo chmod +a \"`whoami` allow delete,write,append,file_inherit,directory_inherit\" {$cachePath} {$logPath}";
 			if($apacheUser){
-				$command .= ' && sudo chmod +a "' . $apacheUser . ' allow delete,write,append,file_inherit,directory_inherit" app/cache app/logs';
+				$command .= " && sudo chmod +a \"{$apacheUser} allow delete,write,append,file_inherit,directory_inherit\" {$cachePath} {$logPath}";
 			}
 			echo "Running: {$command}";
 			passthru($command, $return);
@@ -43,7 +43,7 @@ if($argc === 2){
 				? " -m u:{$apacheUser}:rwX"
 				: ''
 			;
-			$command = "sudo setfacl -R {$apacheCommandPart} -m u:`whoami`:rwX app/cache app/logs && sudo setfacl -dR {$apacheCommandPart} -m u:`whoami`:rwX app/cache app/logs";
+			$command = "sudo setfacl -R {$apacheCommandPart} -m u:`whoami`:rwX {$cachePath} {$logPath} && sudo setfacl -dR {$apacheCommandPart} -m u:`whoami`:rwX {$cachePath} {$logPath}";
 			echo "Running: {$command}";
 			passthru($command, $return);
 		break;

@@ -17,6 +17,7 @@ class App extends AppBase{
 				//--symfony paths
 				,'app'=> $appPath
 				,'src'=> $appPath . '/../src'
+				,'var'=> $appPath . '/../var'
 				,'vendor'=> constant(__NAMESPACE__ . '\VENDOR_DIR')
 			)
 			//--See [Symfony's docs on "Setting up Permissions"](http://symfony.com/doc/current/book/installation.html#configuration-and-setup).  Uncomment the following line if you can't use ACL's
