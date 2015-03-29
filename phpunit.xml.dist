@@ -16,7 +16,7 @@
 	</testsuites>
 	<php>
 		<server name="KERNEL_DIR" value="app/" />
-		<const name="TJM\Bundle\StandardEditionBundle\Component\App\SYMFONY_ENVIRONMENT" value="test" />
+		<const name="TJM\Bundle\StandardEditionBundle\Component\App\ENVIRONMENT" value="test" />
 	</php>
 	<filter>
 		<whitelist>
