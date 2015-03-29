@@ -21,7 +21,7 @@ class DefaultController extends Controller{
 		$pathInfo = $request->getPathInfo();
 		$requestUri = $request->getRequestUri();
 		$url = str_replace($pathInfo, rtrim($pathInfo, ' /'), $requestUri);
-		return $this->redirect($url, ($this->get('kernel')->getEnvironment() === 'dev') ? 302 : 302);
+		return $this->redirect($url, ($this->get('kernel')->getEnvironment() === 'dev') ? 302 : 301);
 	}
 	public function simplePageAction($name){
 		return $this->renderPage(
