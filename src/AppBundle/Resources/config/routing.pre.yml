@@ -1,15 +1,15 @@
 appHome:
- pattern: "{slash}"
+ path: "{slash}"
  defaults: {_controller: AppBundle:Default:index, slash: ""}
  requirements:
   slash: /?
 
 appTest:
- pattern: /test{parameters}
+ path: /test{parameters}
  defaults: {_controller: AppBundle:Default:test}
  requirements:
   parameters: .*
 
 appSimplePage:
- pattern: /{name}
+ path: /{name}
  defaults: {_controller: AppBundle:Default:simplePage}
