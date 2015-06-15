@@ -5,11 +5,6 @@
 /app/config/parameters.yml
 /bin/*
 !bin/console
-!bin/info
-!bin/init
-!bin/installComposer
-!bin/permissions
-!bin/vendors
 /composer.lock
 /composer.phar
 /var/bootstrap.php.cache
