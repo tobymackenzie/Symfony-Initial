@@ -5,63 +5,56 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use TJM\Bundle\BaseBundle\Entity\Entity as BaseEntity;
 
-/**
-AppBundle\Entity\Entity
-to be used to grab pieces for actual entities, should have examples of most types of attributes and their getters/setters
-@ORM\Table(name="entities")
-@ORM\Entity(repositoryClass="TJM\Bundle\BaseBundle\Repository\Repository")
+/* *
+*To be used to grab pieces for actual entities, should have examples of most types of attributes and their getters/setters
+*
+*@ORM\Entity(repositoryClass="TJM\Bundle\BaseBundle\Repository\Repository")
+*@ORM\Table()
 */
 class SampleEntity extends BaseEntity{
 	/*==========
 	==attributes/fields
 	==========*/
 	/**
-	@var integer $id
-	@ORM\Column(name="unid", type="integer", nullable=false, columnDefinition="integer unsigned")
-	@ORM\Id
-	@ORM\GeneratedValue(strategy="AUTO")
+	*@ORM\Column(type="integer", nullable=false, columnDefinition="integer unsigned")
+	*@ORM\GeneratedValue()
+	*@ORM\Id
 	*/
 	protected $id;
 
 	/**
-	@var AppBundle\Entity\SampleEntity
-	@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToManyOwningSide")
+	*@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToManyOwningSide")
 	*/
 	protected $fooManyToManyInverseSide;
 
 	/**
-	@var AppBundle\Entity\SampleEntity
-	@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", inversedBy="fooManyToManyInverseSide")
-	@ORM\JoinTable(
-		name="entities_entities",
-		joinColumns={
-			@ORM\JoinColumn(name="foo_many_to_many_owning_id", referencedColumnName="id")
-		},
-		inverseJoinColumns={
-			@ORM\JoinColumn(name="foo_many_to_many_inverse_id", referencedColumnName="id")
-		}
-	)
+	*@ORM\JoinTable(
+		*joinColumns={
+			*@ORM\JoinColumn(referencedColumnName="id")
+		*},
+		*inverseJoinColumns={
+			*@ORM\JoinColumn(referencedColumnName="id")
+		*}
+	*)
+	*@ORM\ManyToMany(targetEntity="AppBundle\Entity\SampleEntity", inversedBy="fooManyToManyInverseSide")
 	*/
 	protected $fooManyToManyOwningSide;
 
 	/**
-	@var AppBundle\Entity\SampleEntity
-	@ORM\ManyToOne(targetEntity="AppBundle\Entity\SampleEntity")
-	@ORM\JoinColumns({
-		@ORM\JoinColumn(name="foo_many_to_one_id", referencedColumnName="id")
-	})
+	*@ORM\JoinColumns({
+		*@ORM\JoinColumn(referencedColumnName="id")
+	*})
+	*@ORM\ManyToOne(targetEntity="AppBundle\Entity\SampleEntity")
 	*/
 	protected $fooManyToOne;
 
 	/**
-	@var AppBundle\Entity\SampleEntity
-	@ORM\OneToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToOne")
+	*@ORM\OneToMany(targetEntity="AppBundle\Entity\SampleEntity", mappedBy="fooManyToOne")
 	*/
 	protected $fooOneToMany;
 
 	/**
-	@var string $fooString
-	@ORM\Column(name="fooString", type="string")
+	*@ORM\Column(type="string")
 	*/
 	protected $fooString;
 
@@ -80,24 +73,24 @@ class SampleEntity extends BaseEntity{
 	==getters and setters
 	==========*/
 	/**
-	get id attribute
-	@return integer $unid
+	*get id attribute
+	*@return integer $unid
 	*/
 	public function getId(){
 		return $this->id;
 	}
 
 	/**
-	get fooString attribute
-	@return string $fooString
+	*get fooString attribute
+	*@return string $fooString
 	*/
 	public function getFooString(){
 		return $this->fooString;
 	}
 	/**
-	set fooString attribute
-	@param string $value
-	@return string $fooString
+	*set fooString attribute
+	*@param string $value
+	*@return string $fooString
 	*/
 	public function setFooString($value){
 		$this->fooString = $value;
@@ -105,8 +98,8 @@ class SampleEntity extends BaseEntity{
 	}
 
 	/**
-	Add fooManyToManyInverseSide
-	@param AppBundle\Entity\SampleEntity $value
+	*Add fooManyToManyInverseSide
+	*@param AppBundle\Entity\SampleEntity $value
 	*/
 	public function addSampleEntity(\AppBundle\Entity\SampleEntity $value){
 		$this->fooManyToManyInverseSide[] = $value;
@@ -114,31 +107,31 @@ class SampleEntity extends BaseEntity{
 	}
 
 	/**
-	Get fooManyToManyInverseSide
-	@return Doctrine\Common\Collections\Collection
+	*Get fooManyToManyInverseSide
+	*@return Doctrine\Common\Collections\Collection
 	*/
 	public function getFooManyToManyInverseSide(){
 		return $this->fooManyToManyInverseSide;
 	}
 
 	/**
-	Get fooManyToManyOwningSide
-	@return Doctrine\Common\Collections\Collection
+	*Get fooManyToManyOwningSide
+	*@return Doctrine\Common\Collections\Collection
 	*/
 	public function getFooManyToManyOwningSide(){
 		return $this->fooManyToManyOwningSide;
 	}
 
 	/**
-	Get fooManyToOne
-	@return AppBundle\Entity\SampleEntity
+	*Get fooManyToOne
+	*@return AppBundle\Entity\SampleEntity
 	*/
 	public function getFooManyToOne(){
 		return $this->fooManyToOne;
 	}
 	/**
-	Set fooManyToOne
-	@param AppBundle\Entity\SampleEntity $fooManyToOne
+	*Set fooManyToOne
+	*@param AppBundle\Entity\SampleEntity $fooManyToOne
 	*/
 	public function setFooManyToOne(\AppBundle\Entity\SampleEntity $fooManyToOne){
 		$this->fooManyToOne = $fooManyToOne;
@@ -146,8 +139,8 @@ class SampleEntity extends BaseEntity{
 	}
 
 	/**
-	Get fooOneToMany
-	@return Doctrine\Common\Collections\Collection
+	*Get fooOneToMany
+	*@return Doctrine\Common\Collections\Collection
 	*/
 	public function getFooOneToMany(){
 		return $this->fooOneToMany;
