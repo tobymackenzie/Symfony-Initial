@@ -3,6 +3,7 @@
 	,"autoload": {
 		"psr-0": {
 			"AppCache": "app/"
+			,"AppKernel": "app/"
 			,"": "src/"
 		}
 	}
