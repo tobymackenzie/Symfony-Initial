@@ -22,8 +22,6 @@ if(App::getEnvironment() === 'dev'){
 	$loader = new ApcClassLoader('sf2', $loader);
 	$loader->register(true);
 	*/
-
-	//require_once __DIR__.'/../app/AppCache.php';
 }
 
 App::runWeb();

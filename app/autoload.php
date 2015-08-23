@@ -31,5 +31,7 @@ App::getSingleton(Array(
 	//--See [Symfony's docs on "Setting up Permissions"](http://symfony.com/doc/current/book/installation.html#configuration-and-setup).  Uncomment the following line if you can't use ACL's
 	// ,'umask'=> 0
 ));
+//-# uncomment to enable Symfony's HTTPCache in 'prod' environment
+// App::getSingleton()->setCache('prod');
 
 return $loader;

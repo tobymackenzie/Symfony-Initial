@@ -1,7 +1,10 @@
 {
 	"name": "tjm/symfony-initial"
 	,"autoload": {
-		"psr-0": {"": "src/"}
+		"psr-0": {
+			"AppCache": "app/"
+			,"": "src/"
+		}
 	}
 	,"config": {
 		"bin-dir": "bin"
