@@ -1,6 +1,6 @@
 imports:
  - {resource: config.yml}
- - {resource: @TJMStandardEditionBundle/Resources/config/config_prod.yml}
+ - {resource: '@TJMStandardEditionBundle/Resources/config/config_prod.yml'}
 
 #==Doctrine
 #doctrine:

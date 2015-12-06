@@ -1,14 +1,8 @@
 imports:
  - {resource: parameters.yml}
  - {resource: security.yml}
- - {resource: @TJMBaseBundle/Resources/config/config.yml}
- - {resource: @TJMStandardEditionBundle/Resources/config/config.yml}
+ - {resource: '@TJMBaseBundle/Resources/config/config.yml'}
+ - {resource: '@TJMStandardEditionBundle/Resources/config/config.yml'}
 
 parameters:
  twig.extension.assets.class: TJM\Bundle\BaseBundle\Extension\AssetsExtension
-
-#==Assetic
-assetic:
- bundles:
-  - AppBundle
- write_to: %kernel.root_dir%/../web/_assets

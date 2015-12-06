@@ -1,9 +1,7 @@
 {% extends 'TJMBaseBundle:skeletons:full.html.twig' %}
 
 {% block docStyles %}
-{%	stylesheets '@AppBundle/Resources/public/presentation/*.css' %}
-<link href="{{ asset_url }}" rel="stylesheet" />
-{%	endstylesheets %}
+<link href="{{asset('bundles/app/presentation/main.css')}}" rel="stylesheet" />
 {% endblock %}
 
 {% block docPreScripts %}
@@ -16,9 +14,7 @@
 {% endblock %}
 
 {% block docPostScripts %}
-{%	javascripts '@AppBundle/Resources/public/behavior/*.js' %}
-<script src="{{ asset_url }}"></script>
-{%	endjavascripts %}
+<script src="{{asset('bundles/app/behavior/main.js')}}"></script>
 {% endblock %}
 
 {% block docNav %}

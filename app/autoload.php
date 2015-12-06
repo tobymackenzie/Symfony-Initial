@@ -4,6 +4,8 @@ namespace TJM\Bundle\StandardEditionBundle\Component\App;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Composer\Autoload\ClassLoader;
 
+error_reporting(error_reporting() & ~E_USER_DEPRECATED);
+
 define(__NAMESPACE__ . '\PROJECT_DIR', realpath(__DIR__ . '/..'));
 define(__NAMESPACE__ . '\VENDOR_DIR', realpath(__DIR__ . '/../vendor'));
 

@@ -2,7 +2,7 @@
 // use Symfony\Component\ClassLoader\ApcClassLoader;
 use TJM\Bundle\StandardEditionBundle\Component\App\App;
 
-$loader = require_once __DIR__ . '/../var/bootstrap.php.cache';
+$loader = require_once __DIR__ . '/../app/autoload.php';
 
 if(App::getEnvironment() === 'dev'){
 	// This check prevents access to debug front controllers that are deployed by accident to production servers.
@@ -15,6 +15,7 @@ if(App::getEnvironment() === 'dev'){
 		exit('You are not allowed to access this file. Check ' . basename(__FILE__) . ' for more information.');
 	}
 }elseif(App::getEnvironment() === 'prod'){
+	require_once __DIR__ . '/../var/bootstrap.php.cache';
 	// Use APC for autoloading to improve performance.
 	// Change 'sf2' to a unique prefix in order to prevent cache key conflicts
 	// with other applications also using APC.

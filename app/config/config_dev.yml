@@ -1,13 +1,6 @@
 imports:
  - {resource: config.yml}
- - {resource: @TJMStandardEditionBundle/Resources/config/config_dev.yml}
+ - {resource: "@TJMStandardEditionBundle/Resources/config/config_dev.yml"}
 
 #==Swiftmailer:
 # delivery_address: me@example.com
-
-#==Services
-services:
- debug.twig.extension:
-  class: Twig_Extension_Debug
-  tags:
-   - { name: 'twig.extension' }
