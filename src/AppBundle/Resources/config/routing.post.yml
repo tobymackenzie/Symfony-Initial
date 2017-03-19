@@ -1,6 +1,0 @@
-remove_trailing_slash:
-    path: /{url}
-    defaults: {_controller: AppBundle:Default:removeTrailingSlash}
-    methods: [GET]
-    requirements:
-        url: .*/$
