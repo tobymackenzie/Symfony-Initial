@@ -2,12 +2,12 @@
 	"name": "tjm/symfony-initial"
 	,"autoload": {
 		"psr-0": {
-			"AppCache": "app/"
-			,"AppKernel": "app/"
+			"AppCache": "src/AppBundle/"
+			,"AppKernel": "src/AppBundle/"
 			,"": "src/"
 		}
 		,"files": [
-			"app/AppKernel.php"
+			"src/AppBundle/AppKernel.php"
 		]
 	}
 	,"config": {
@@ -15,9 +15,9 @@
 	}
 	,"extra": {
 		"incenteev-parameters": {
-			"file": "app/config/parameters.yml"
+			"file": "src/AppBundle/Resources/config/parameters.yml"
 		}
-		,"symfony-app-dir": "app"
+		,"symfony-app-dir": "src/AppBundle"
 		,"symfony-assets-install": "relative"
 		,"symfony-bin-dir": "bin"
 		,"symfony-var-dir": "var"

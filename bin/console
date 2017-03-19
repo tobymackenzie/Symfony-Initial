@@ -4,7 +4,7 @@ namespace TJM;
 use Exception;
 use TJM\Bundle\StandardEditionBundle\Component\App\App;
 
-$loader = __DIR__ . '/../app/autoload.php';
+$loader = __DIR__ . '/../src/AppBundle/autoload.php';
 if(file_exists($loader)){
 	$loader = require_once($loader);
 	App::runConsole();
