@@ -6,7 +6,7 @@ use Composer\Autoload\ClassLoader;
 
 error_reporting(error_reporting() & ~E_USER_DEPRECATED);
 
-define(__NAMESPACE__ . '\PROJECT_DIR', realpath(__DIR__ . '/../..'));
+define(__NAMESPACE__ . '\PROJECT_DIR', realpath(__DIR__ . '/..'));
 define(__NAMESPACE__ . '\VENDOR_DIR', realpath(constant(__NAMESPACE__ . '\PROJECT_DIR') . '/vendor'));
 
 /**
@@ -24,8 +24,8 @@ App::getSingleton(Array(
 		//--cli paths
 		'PHPCLI'=> '/usr/bin/php'
 		//--symfony paths
-		,'app'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src/AppBundle'
-		,'config'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src/AppBundle/Resources/config'
+		,'app'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src'
+		,'config'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src/Resources/config'
 		,'project'=> constant(__NAMESPACE__ . '\PROJECT_DIR')
 		,'src'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src'
 		,'var'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/var'

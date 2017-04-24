@@ -3,10 +3,11 @@
 	,"autoload": {
 		"psr-4": {
 			"": "src/"
+			,"AppBundle\\": "src/"
 		}
 		,"classmap": [
-			"src/AppBundle/AppKernel.php"
-			,"src/AppBundle/AppCache.php"
+			"src/AppKernel.php"
+			,"src/AppCache.php"
 		]
 	}
 	,"config": {
@@ -17,9 +18,9 @@
 	}
 	,"extra": {
 		"incenteev-parameters": {
-			"file": "src/AppBundle/Resources/config/parameters.yml"
+			"file": "src/Resources/config/parameters.yml"
 		}
-		,"symfony-app-dir": "src/AppBundle"
+		,"symfony-app-dir": "src"
 		,"symfony-assets-install": "relative"
 		,"symfony-bin-dir": "bin"
 		,"symfony-var-dir": "var"

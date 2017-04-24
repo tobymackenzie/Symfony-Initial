@@ -4,11 +4,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
 	backupGlobals = "false"
-	bootstrap = "src/AppBundle/autoload.php"
+	bootstrap = "src/autoload.php"
 	colors = "true"
 >
 	<testsuites>
 		<testsuite name="Project Test Suite">
+			<directory>src/Tests</directory>
 			<directory>src/*Bundle/Tests</directory>
 			<directory>src/*/*Bundle/Tests</directory>
 			<directory>src/*/Bundle/*Bundle/Tests</directory>
@@ -17,7 +18,7 @@
 	<php>
 		<const name="TJM\Bundle\StandardEditionBundle\Component\App\ENVIRONMENT" value="test" />
 		<ini name="error_reporting" value="-1" />
-		<server name="KERNEL_DIR" value="src/AppBundle/" />
+		<server name="KERNEL_DIR" value="src/" />
 	</php>
 	<filter>
 		<whitelist>
