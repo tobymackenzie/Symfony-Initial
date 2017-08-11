@@ -4,7 +4,7 @@
 .DS_Store
 /app/config/parameters.yml
 /bin/*
-!bin/console
+!bin/app
 /composer.lock
 /composer.phar
 /var/bootstrap.php.cache
