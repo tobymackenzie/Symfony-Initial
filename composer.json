@@ -2,12 +2,12 @@
 	"name": "tjm/symfony-initial"
 	,"autoload": {
 		"psr-4": {
-			"": "src/"
-			,"AppBundle\\": "src/"
+			"": "app/"
+			,"AppBundle\\": "app/"
 		}
 		,"classmap": [
-			"src/AppKernel.php"
-			,"src/AppCache.php"
+			"app/AppKernel.php"
+			,"app/AppCache.php"
 		]
 	}
 	,"config": {
@@ -18,9 +18,9 @@
 	}
 	,"extra": {
 		"incenteev-parameters": {
-			"file": "src/Resources/config/parameters.yml"
+			"file": "app/Resources/config/parameters.yml"
 		}
-		,"symfony-app-dir": "src"
+		,"symfony-app-dir": "app"
 		,"symfony-assets-install": "relative"
 		,"symfony-bin-dir": "bin"
 		,"symfony-var-dir": "var"
@@ -57,8 +57,8 @@
 		"symfony-scripts": [
 			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
 			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
-			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+			,"bin/app cache:clear --no-warmup"
+			,"bin/app assets:install --symlink --relative web"
 			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
 			,"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
 		]

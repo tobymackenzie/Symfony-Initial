@@ -24,10 +24,10 @@ App::getSingleton(Array(
 		//--cli paths
 		'PHPCLI'=> '/usr/bin/php'
 		//--symfony paths
-		,'app'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src'
-		,'config'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src/Resources/config'
+		,'app'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/app'
+		,'config'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/app/Resources/config'
 		,'project'=> constant(__NAMESPACE__ . '\PROJECT_DIR')
-		,'src'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/src'
+		,'src'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/app'
 		,'var'=> constant(__NAMESPACE__ . '\PROJECT_DIR') . '/var'
 		,'vendor'=> constant(__NAMESPACE__ . '\VENDOR_DIR')
 	)

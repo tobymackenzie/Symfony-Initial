@@ -1,10 +1,8 @@
 #!/usr/bin/env php
 <?php
-namespace TJM;
-use Exception;
 use TJM\Bundle\StandardEditionBundle\Component\App\App;
 
-$loader = __DIR__ . '/../src/autoload.php';
+$loader = __DIR__ . '/../app/autoload.php';
 if(file_exists($loader)){
 	$loader = require_once($loader);
 	App::runConsole();

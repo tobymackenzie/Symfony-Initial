@@ -3,7 +3,7 @@
 use TJM\Bundle\StandardEditionBundle\Component\App\App;
 
 if(!isset($loader)){
-	$loader = require(__DIR__ . '/../src/autoload.php');
+	$loader = require(__DIR__ . '/../app/autoload.php');
 }
 
 if(App::getEnvironment() === 'dev'){
